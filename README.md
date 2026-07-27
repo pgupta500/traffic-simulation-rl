@@ -13,7 +13,7 @@ inspectable.
 - [Architectural Overview](#architectural-overview)
 - [Visual Results](#visual-results)
 - [Benchmark: Controller Comparison](#benchmark-controller-comparison)
-- [Quickstart](#quickstart)
+- [Quickstart & Usage](#-quickstart--usage)
 - [Module Reference](#module-reference)
 - [Sim-to-Real Deployment Challenges](#sim-to-real-deployment-challenges)
 
@@ -121,12 +121,19 @@ reduced worst-case wait by ~18% at no cost to average throughput.
 
 ---
 
-## Quickstart
+## 🚀 Quickstart & Usage
+
+### Prerequisites
+Ensure you have Python 3.8+ installed along with `numpy` and `matplotlib`
+(plus `pillow`, used by Matplotlib to write the animated GIF):
 
 ```bash
-# dependencies
 pip install numpy matplotlib pillow
+```
 
+### Usage
+
+```bash
 # 1D highway: density sweep -> congestion_curve.png
 python main.py
 
