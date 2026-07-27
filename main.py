@@ -44,6 +44,7 @@ def measure(density, length=500, steps=500, warmup=100,
 
 
 def main():
+    """Sweep density, print the flow statistics, and save the fundamental diagram."""
     densities = np.arange(0.05, 0.80 + 1e-9, 0.05)
     mean_speeds = np.empty_like(densities)
     throughputs = np.empty_like(densities)

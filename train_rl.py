@@ -146,6 +146,7 @@ def evaluate(agent_unc, agent_con):
 
 # --------------------------------------------------------------------- main
 def main():
+    """Train both agents, evaluate against baselines, and save the learning curve."""
     print("Training unconstrained agent...")
     agent_unc = QTableAgent(n_phases=2, alpha=0.1, gamma=0.9, epsilon=1.0,
                             epsilon_min=0.05, epsilon_decay=0.97, seed=0)

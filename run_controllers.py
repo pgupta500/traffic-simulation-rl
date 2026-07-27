@@ -33,6 +33,7 @@ def run_episode(make_controller, seed):
 
 
 def main():
+    """Benchmark each controller across seeds and print the results table."""
     controllers = {
         FixedTimerController.name: lambda: FixedTimerController(phase_duration=12),
         MaxQueueController.name: lambda: MaxQueueController(min_green=5),

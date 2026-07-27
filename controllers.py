@@ -16,6 +16,7 @@ class FixedTimerController:
         self.phase_duration = int(phase_duration)
 
     def act(self, inter):
+        """Return the scheduled green phase for the current step."""
         # switch phase every ``phase_duration`` steps regardless of queues.
         return (inter.time // self.phase_duration) % 2
 
@@ -35,6 +36,7 @@ class MaxQueueController:
         self._time_in_phase = 0
 
     def act(self, inter):
+        """Return the phase serving the longer-queued axis (min-green permitting)."""
         n, s, e, w = inter.queue_counts()
         ns_queue, ew_queue = n + s, e + w
 

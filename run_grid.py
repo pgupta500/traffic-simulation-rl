@@ -34,6 +34,7 @@ def signal_marker_xy(inter, approach):
 
 
 def main():
+    """Animate the intersection under a fixed-time controller and save the GIF."""
     inter = Intersection2D(arm_length=12, p_arrival=0.4, seed=7)
 
     fig, ax = plt.subplots(figsize=(6, 6))
