@@ -33,6 +33,8 @@ class Intersection2D:
         self.phase = self.PHASE_NS
         self.time = 0
         self.total_crossed = 0
+        # cumulative vehicle-steps spent blocked (used for mean wait time).
+        self.total_wait_steps = 0
 
     # ------------------------------------------------------------------ state
     def is_green(self, approach):
@@ -78,6 +80,10 @@ class Intersection2D:
             if occ[i] and not new[i + 1]:
                 new[i + 1] = True
                 new[i] = False
+
+        # a vehicle that stayed in the same cell (occupied before and after)
+        # was blocked this step -- count it toward total waiting time.
+        self.total_wait_steps += int((occ & new).sum())
 
         # stochastic arrival at the tail if the entrance cell is free.
         if not new[0] and self.rng.random() < self.p_arrival:
